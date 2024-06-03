@@ -1,0 +1,1 @@
+# AmrAmin.DesignPatterns
