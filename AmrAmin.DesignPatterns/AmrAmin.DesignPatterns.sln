@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns", "AmrAmin.DesignPatterns.csproj", "{F9515D3E-4B9F-4742-A3C6-8B1FE8A19310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.MementoPattern", "..\AmrAmin.DesignPatterns.MementoPattern\AmrAmin.DesignPatterns.MementoPattern.csproj", "{30BC6E22-DA69-41C6-8F33-C7507D1BF670}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9515D3E-4B9F-4742-A3C6-8B1FE8A19310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9515D3E-4B9F-4742-A3C6-8B1FE8A19310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9515D3E-4B9F-4742-A3C6-8B1FE8A19310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30BC6E22-DA69-41C6-8F33-C7507D1BF670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30BC6E22-DA69-41C6-8F33-C7507D1BF670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30BC6E22-DA69-41C6-8F33-C7507D1BF670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30BC6E22-DA69-41C6-8F33-C7507D1BF670}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
