@@ -1,4 +1,4 @@
-﻿namespace AmrAmin.DesignPatterns.MementoPattern;
+﻿namespace AmrAmin.DesignPatterns.MementoPattern.EditorExample;
 public class Editor
 {
     public string Content { get; private set; }
@@ -12,7 +12,7 @@ public class Editor
     }
     public void SetContent(string content)
     {
-        this.Content = content;
+        Content = content;
     }
     public string GetContent()
     {

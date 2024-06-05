@@ -1,4 +1,4 @@
-﻿namespace AmrAmin.DesignPatterns.MementoPattern;
+﻿namespace AmrAmin.DesignPatterns.MementoPattern.EditorExample;
 public class EditorState
 {
     public string Content { get; }

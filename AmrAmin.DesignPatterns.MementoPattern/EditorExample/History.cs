@@ -1,4 +1,4 @@
-﻿namespace AmrAmin.DesignPatterns.MementoPattern;
+﻿namespace AmrAmin.DesignPatterns.MementoPattern.EditorExample;
 using System.Collections.Generic;
 
 public class History
