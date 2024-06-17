@@ -99,3 +99,4 @@ In this example, the `Canvas` class is able to use the different tool behaviors 
 
 ## Conclusion
 The State Pattern is a powerful design pattern that can help you create more flexible and maintainable code, especially when dealing with different behaviors or states within your application. In the context of your `Canvas` class and tool management, the State Pattern allows you to encapsulate the tool-specific logic and make the `Canvas` class more adaptable to changes and new tool requirements.
+And this acheive the `Open-Closed` principle so you can extend the functiona;ity without modifying your existing code.
