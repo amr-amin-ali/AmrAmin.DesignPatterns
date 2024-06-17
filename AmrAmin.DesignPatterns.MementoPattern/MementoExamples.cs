@@ -8,6 +8,13 @@ public static class MementoExamples
 {
     public static void RunGangOfFourExample()
     {
+        Console.WriteLine(" __________________________________________________________________________________");
+        Console.WriteLine("/                                                                                  \\");
+        Console.WriteLine("|  Use MementoPattern to test the 'undo' functionality in the GangOfFour example:   |");
+        Console.WriteLine("|                                                                                   |");
+        Console.WriteLine("|                                                                                   |");
+        Console.WriteLine("|                                    [START]                                        |");
+        Console.WriteLine("|                                                                                   |");
 
         // Example usage
         var originator = new Originator("Initial State");
@@ -21,6 +28,10 @@ public static class MementoExamples
         caretaker.Undo(originator);
         caretaker.Undo(originator);
         caretaker.Redo(originator);
+        Console.WriteLine("|                                                                                   |");
+        Console.WriteLine("|                                    [END]                                          |");
+        Console.WriteLine("\\===================================================================================/");
+
     }
     public static void RunEditorExample()
     {

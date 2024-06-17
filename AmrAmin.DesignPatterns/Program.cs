@@ -1,6 +1,7 @@
 ﻿namespace AmrAmin.DesignPatterns;
 
 using AmrAmin.DesignPatterns.MementoPattern;
+using AmrAmin.DesignPatterns.StatePattern;
 
 public class Program
 {
@@ -8,5 +9,6 @@ public class Program
     {
         MementoExamples.RunEditorExample();
         MementoExamples.RunGangOfFourExample();
+        StateExamples.RunPhotoshopExample();
     }
 }

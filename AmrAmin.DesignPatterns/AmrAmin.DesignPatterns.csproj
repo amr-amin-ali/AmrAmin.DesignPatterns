@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AmrAmin.DesignPatterns.MementoPattern\AmrAmin.DesignPatterns.MementoPattern.csproj" />
+    <ProjectReference Include="..\AmrAmin.DesignPatterns.StatePattern\AmrAmin.DesignPatterns.StatePattern.csproj" />
   </ItemGroup>
 
 </Project>
