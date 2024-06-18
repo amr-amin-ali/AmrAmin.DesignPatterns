@@ -1,5 +1,4 @@
-```markdown
-# Template Method Design Pattern in C#
+# Template Method Design
 
 ## Overview
 The Template Method design pattern is a behavioral design pattern that defines the skeleton of an algorithm in a method, called the template method, which defers some steps to subclasses. It lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
