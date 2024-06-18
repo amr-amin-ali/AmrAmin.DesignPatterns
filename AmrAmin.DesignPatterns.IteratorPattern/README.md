@@ -55,7 +55,7 @@ The Iterator Pattern can be used to solve this problem. Here's how you can imple
    ```csharp
    public class BrowseHistory<T>
    {
-       public List<T> data;
+       public List<T> data = new List<T>();
 
        public void Push(T item)
        {
