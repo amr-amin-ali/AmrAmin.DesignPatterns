@@ -1,34 +1,29 @@
-﻿namespace AmrAmin.DesignPatterns.IteratorPattern;
+﻿namespace AmrAmin.DesignPatterns.CommandPattern;
 using System;
 
-using AmrAmin.DesignPatterns.IteratorPattern.BrowserExample;
-
-public static class IteratorExamples
+public static class CommandPatternExamples
 {
     public static void RunExamples()
     {
+        RunLightExample();
+    }
+
+    private static void RunLightExample()
+    {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use IteratorPattern to test the BROWSER example                              |");
+        Console.WriteLine("|      Use CommandPattern to test the Light example                                 |");
         Console.WriteLine("|                                                                                   |");
         Console.WriteLine("|                                                                                   |");
         Console.WriteLine("|                                    [START]                                        |");
+        Console.WriteLine("|                                                                                   |");
 
-        var history = new BrowseHistory<string>();
-        history.Push("https://www.example.com");
-        history.Push("https://www.google.com");
-        history.Push("https://www.github.com");
-
-        var iterator = history.CreateIterator();
-        while (iterator.HasNext())
-        {
-            Console.WriteLine("|      " + iterator.Current());
-            iterator.Next();
-        }
-
-
-
-
+        // Usage
+        var light = new Light();
+        var lightOnCommand = new LightOnCommand(light);
+        var remoteControl = new RemoteControl();
+        remoteControl.SetCommand(lightOnCommand);
+        remoteControl.PressButton(); // Output: Light is on.
 
 
         Console.WriteLine("|                                                                                   |");

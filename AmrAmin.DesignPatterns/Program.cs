@@ -1,5 +1,6 @@
 ﻿namespace AmrAmin.DesignPatterns;
 
+using AmrAmin.DesignPatterns.CommandPattern;
 using AmrAmin.DesignPatterns.IteratorPattern;
 using AmrAmin.DesignPatterns.MementoPattern;
 using AmrAmin.DesignPatterns.StatePattern;
@@ -10,12 +11,11 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        TemplateMethodExamples.RunBrewingProcessExample();
-        StrategyExamples.RunGangOfFourExample();
-        StrategyExamples.RunImageStorageExample();
-        IteratorExamples.RunBrowserExample();
-        MementoExamples.RunEditorExample();
-        MementoExamples.RunGangOfFourExample();
-        StateExamples.RunPhotoshopExample();
+        TemplateMethodExamples.RunExamples();
+        IteratorExamples.RunExamples();
+        StrategyExamples.RunExamples();
+        MementoExamples.RunExamples();
+        StateExamples.RunExamples();
+        CommandPatternExamples.RunExamples();
     }
 }

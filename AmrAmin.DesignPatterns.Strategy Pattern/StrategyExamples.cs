@@ -6,11 +6,16 @@ using AmrAmin.DesignPatterns.Strategy_Pattern.ImageStorageExample;
 
 public static class StrategyExamples
 {
-    public static void RunGangOfFourExample()
+    public static void RunExamples()
+    {
+        RunGangOfFourExample();
+        RunImageStorageExample();
+    }
+    private static void RunGangOfFourExample()
     {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use StrategyPattern to test the ImageStorage example                         |");
+        Console.WriteLine("|      Use StrategyPattern to test the ShippingCalculator example                   |");
         Console.WriteLine("|                                                                                   |");
         Console.WriteLine("|                                                                                   |");
         Console.WriteLine("|                                    [START]                                        |");
@@ -39,7 +44,7 @@ public static class StrategyExamples
         Console.WriteLine("\\===================================================================================/");
 
     }
-    public static void RunImageStorageExample()
+    private static void RunImageStorageExample()
     {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");

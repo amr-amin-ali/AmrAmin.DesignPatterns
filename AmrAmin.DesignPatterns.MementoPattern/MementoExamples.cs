@@ -6,7 +6,13 @@ using AmrAmin.DesignPatterns.MementoPattern.GangOfFourExample;
 
 public static class MementoExamples
 {
-    public static void RunGangOfFourExample()
+    public static void RunExamples()
+    {
+        RunGangOfFourExample();
+        RunEditorExample();
+    }
+
+    private static void RunGangOfFourExample()
     {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");
@@ -33,7 +39,7 @@ public static class MementoExamples
         Console.WriteLine("\\===================================================================================/");
 
     }
-    public static void RunEditorExample()
+    private static void RunEditorExample()
     {
         var editor = new Editor();
         var history = new History();

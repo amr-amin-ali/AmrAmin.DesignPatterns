@@ -3,7 +3,12 @@ using AmrAmin.DesignPatterns.StatePattern.PhotoshopExample;
 
 public static class StateExamples
 {
-    public static void RunPhotoshopExample()
+    public static void RunExamples()
+    {
+        RunPhotoshopExample();
+    }
+
+    private static void RunPhotoshopExample()
     {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");

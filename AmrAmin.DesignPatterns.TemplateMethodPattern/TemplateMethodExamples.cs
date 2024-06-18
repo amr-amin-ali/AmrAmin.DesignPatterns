@@ -3,7 +3,7 @@ using System;
 
 public static class TemplateMethodExamples
 {
-    public static void RunBrewingProcessExample()
+    public static void RunExamples()
     {
         Console.WriteLine(" __________________________________________________________________________________");
         Console.WriteLine("/                                                                                  \\");
