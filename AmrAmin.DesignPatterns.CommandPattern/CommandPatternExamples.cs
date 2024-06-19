@@ -1,5 +1,5 @@
 ﻿namespace AmrAmin.DesignPatterns.CommandPattern;
-using System;
+using AmrAmin.DesignPatterns.SharedKernel;
 
 public static class CommandPatternExamples
 {
@@ -10,13 +10,9 @@ public static class CommandPatternExamples
 
     private static void RunLightExample()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use CommandPattern to test the Light example                                 |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawHeader("Use CommandPattern to test the Light example");
+
+
 
         // Usage
         var light = new Light();
@@ -26,10 +22,6 @@ public static class CommandPatternExamples
         remoteControl.PressButton(); // Output: Light is on.
 
 
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
-
-
+        UiSkelton.DrawFooter();
     }
 }

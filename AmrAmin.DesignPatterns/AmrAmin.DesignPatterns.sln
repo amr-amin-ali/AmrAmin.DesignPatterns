@@ -7,37 +7,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.MementoPattern", "..\AmrAmin.DesignPatterns.MementoPattern\AmrAmin.DesignPatterns.MementoPattern.csproj", "{30BC6E22-DA69-41C6-8F33-C7507D1BF670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.StatePattern", "..\AmrAmin.DesignPatterns.StatePattern\AmrAmin.DesignPatterns.StatePattern.csproj", "{349757AF-3853-461B-B0BE-1C47322A84BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.StatePattern", "..\AmrAmin.DesignPatterns.StatePattern\AmrAmin.DesignPatterns.StatePattern.csproj", "{349757AF-3853-461B-B0BE-1C47322A84BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.IteratorPattern", "..\AmrAmin.DesignPatterns.IteratorPattern\AmrAmin.DesignPatterns.IteratorPattern.csproj", "{DA0EC596-A4D7-43CD-8D41-B01AE9147D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.IteratorPattern", "..\AmrAmin.DesignPatterns.IteratorPattern\AmrAmin.DesignPatterns.IteratorPattern.csproj", "{DA0EC596-A4D7-43CD-8D41-B01AE9147D17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.Strategy Pattern", "..\AmrAmin.DesignPatterns.Strategy Pattern\AmrAmin.DesignPatterns.Strategy Pattern.csproj", "{5D270318-DFE3-4683-8247-4332A222E215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.Strategy Pattern", "..\AmrAmin.DesignPatterns.Strategy Pattern\AmrAmin.DesignPatterns.Strategy Pattern.csproj", "{5D270318-DFE3-4683-8247-4332A222E215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.TemplateMethodPattern", "..\AmrAmin.DesignPatterns.TemplateMethodPattern\AmrAmin.DesignPatterns.TemplateMethodPattern.csproj", "{5B3F8D88-AE5D-43A8-B67F-9653E5B4EF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.TemplateMethodPattern", "..\AmrAmin.DesignPatterns.TemplateMethodPattern\AmrAmin.DesignPatterns.TemplateMethodPattern.csproj", "{5B3F8D88-AE5D-43A8-B67F-9653E5B4EF81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.CommandPattern", "..\AmrAmin.DesignPatterns.CommandPattern\AmrAmin.DesignPatterns.CommandPattern.csproj", "{3375AEF8-AC6D-4FAE-A2DD-E441D8B74FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.CommandPattern", "..\AmrAmin.DesignPatterns.CommandPattern\AmrAmin.DesignPatterns.CommandPattern.csproj", "{3375AEF8-AC6D-4FAE-A2DD-E441D8B74FB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.VisitorPattern", "..\AmrAmin.DesignPatterns.VisitorPattern\AmrAmin.DesignPatterns.VisitorPattern.csproj", "{032F5D52-B9DC-4F42-AD6C-CEE7C6670559}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.VisitorPattern", "..\AmrAmin.DesignPatterns.VisitorPattern\AmrAmin.DesignPatterns.VisitorPattern.csproj", "{032F5D52-B9DC-4F42-AD6C-CEE7C6670559}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.ChainOfResponsibility", "..\AmrAmin.DesignPatterns.ChainOfResponsibility\AmrAmin.DesignPatterns.ChainOfResponsibility.csproj", "{8F0CCA79-C11E-42A9-B6B2-94270CCB7C72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.ChainOfResponsibility", "..\AmrAmin.DesignPatterns.ChainOfResponsibility\AmrAmin.DesignPatterns.ChainOfResponsibility.csproj", "{8F0CCA79-C11E-42A9-B6B2-94270CCB7C72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.ObserverPattern", "..\AmrAmin.DesignPatterns.ObserverPattern\AmrAmin.DesignPatterns.ObserverPattern.csproj", "{645C2B12-284B-49B1-B969-957ABB1D6431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.ObserverPattern", "..\AmrAmin.DesignPatterns.ObserverPattern\AmrAmin.DesignPatterns.ObserverPattern.csproj", "{645C2B12-284B-49B1-B969-957ABB1D6431}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.MediatorPattern", "..\AmrAmin.DesignPatterns.MediatorPattern\AmrAmin.DesignPatterns.MediatorPattern.csproj", "{A3007353-6CB1-4D1F-B448-D3487456EE61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.MediatorPattern", "..\AmrAmin.DesignPatterns.MediatorPattern\AmrAmin.DesignPatterns.MediatorPattern.csproj", "{A3007353-6CB1-4D1F-B448-D3487456EE61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.ProxyPattern", "..\AmrAmin.DesignPatterns.ProxyPattern\AmrAmin.DesignPatterns.ProxyPattern.csproj", "{80E32A15-F3DB-4939-B6F7-E6DF1CDFD227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.ProxyPattern", "..\AmrAmin.DesignPatterns.ProxyPattern\AmrAmin.DesignPatterns.ProxyPattern.csproj", "{80E32A15-F3DB-4939-B6F7-E6DF1CDFD227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.BridgePattern", "..\AmrAmin.DesignPatterns.BridgePattern\AmrAmin.DesignPatterns.BridgePattern.csproj", "{A5BDD67F-0E28-4FC8-96A0-844924791A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.BridgePattern", "..\AmrAmin.DesignPatterns.BridgePattern\AmrAmin.DesignPatterns.BridgePattern.csproj", "{A5BDD67F-0E28-4FC8-96A0-844924791A26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.FlyweightPattern", "..\AmrAmin.DesignPatterns.FlyweightPattern\AmrAmin.DesignPatterns.FlyweightPattern.csproj", "{E6BBB187-017F-48DB-B629-D4CDC4ADF0A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.FlyweightPattern", "..\AmrAmin.DesignPatterns.FlyweightPattern\AmrAmin.DesignPatterns.FlyweightPattern.csproj", "{E6BBB187-017F-48DB-B629-D4CDC4ADF0A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.FacadePattern", "..\AmrAmin.DesignPatterns.FacadePattern\AmrAmin.DesignPatterns.FacadePattern.csproj", "{D308FEA1-528F-42EB-93B1-A88CD29E488F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.FacadePattern", "..\AmrAmin.DesignPatterns.FacadePattern\AmrAmin.DesignPatterns.FacadePattern.csproj", "{D308FEA1-528F-42EB-93B1-A88CD29E488F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.DecoratorPattern", "..\AmrAmin.DesignPatterns.DecoratorPattern\AmrAmin.DesignPatterns.DecoratorPattern.csproj", "{37432CE1-1BF0-42E0-8A5C-68842E205872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.DecoratorPattern", "..\AmrAmin.DesignPatterns.DecoratorPattern\AmrAmin.DesignPatterns.DecoratorPattern.csproj", "{37432CE1-1BF0-42E0-8A5C-68842E205872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.AdapterPattern", "..\AmrAmin.DesignPatterns.AdapterPattern\AmrAmin.DesignPatterns.AdapterPattern.csproj", "{2C468853-AE56-499C-AC94-FD0CFEFBB91F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.AdapterPattern", "..\AmrAmin.DesignPatterns.AdapterPattern\AmrAmin.DesignPatterns.AdapterPattern.csproj", "{2C468853-AE56-499C-AC94-FD0CFEFBB91F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.CompositePattern", "..\AmrAmin.DesignPatterns.CompositePattern\AmrAmin.DesignPatterns.CompositePattern.csproj", "{771D5856-08DF-4EFA-9A26-1B09A42326BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrAmin.DesignPatterns.CompositePattern", "..\AmrAmin.DesignPatterns.CompositePattern\AmrAmin.DesignPatterns.CompositePattern.csproj", "{771D5856-08DF-4EFA-9A26-1B09A42326BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmrAmin.DesignPatterns.SharedKernel", "..\AmrAmin.DesignPatterns.SharedKernel\AmrAmin.DesignPatterns.SharedKernel.csproj", "{16AB114D-54BE-4682-9791-B100E23B4A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{771D5856-08DF-4EFA-9A26-1B09A42326BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771D5856-08DF-4EFA-9A26-1B09A42326BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771D5856-08DF-4EFA-9A26-1B09A42326BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16AB114D-54BE-4682-9791-B100E23B4A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AB114D-54BE-4682-9791-B100E23B4A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AB114D-54BE-4682-9791-B100E23B4A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AB114D-54BE-4682-9791-B100E23B4A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

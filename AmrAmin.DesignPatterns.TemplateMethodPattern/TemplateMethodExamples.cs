@@ -1,27 +1,20 @@
 ﻿namespace AmrAmin.DesignPatterns.TemplateMethodPattern;
-using System;
+using AmrAmin.DesignPatterns.SharedKernel;
 
 public static class TemplateMethodExamples
 {
     public static void RunExamples()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use TemplateMethod to test the BrewingProcess example                        |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawHeader("Use TemplateMethod to test the BrewingProcess example");
+
         var coffee = new BrewCoffee();
         coffee.TemplateMethod();
 
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawLineSeparator();
+
         var tea = new BrewTea();
         tea.TemplateMethod();
 
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
-
+        UiSkelton.DrawFooter();
     }
 }

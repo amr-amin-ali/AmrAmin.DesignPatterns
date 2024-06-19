@@ -1,6 +1,7 @@
 ﻿namespace AmrAmin.DesignPatterns.Strategy_Pattern;
 using System;
 
+using AmrAmin.DesignPatterns.SharedKernel;
 using AmrAmin.DesignPatterns.Strategy_Pattern.ConcreteStrategies;
 using AmrAmin.DesignPatterns.Strategy_Pattern.ImageStorageExample;
 
@@ -9,17 +10,14 @@ public static class StrategyExamples
     public static void RunExamples()
     {
         RunGangOfFourExample();
+        Console.WriteLine("\n\n");
         RunImageStorageExample();
+        Console.WriteLine("\n\n");
     }
     private static void RunGangOfFourExample()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use StrategyPattern to test the ShippingCalculator example                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawHeader("Use StrategyPattern to test the ShippingCalculator example");
+
 
         // Create a ShippingCalculator instance
         var shippingCalculator = new ShippingCalculatorContext();
@@ -27,32 +25,33 @@ public static class StrategyExamples
         // Set the shipping strategy for electronic products
         shippingCalculator.SetShippingStrategy(new ElectronicShippingConcreteStrategy());
         double electronicShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
-        Console.WriteLine($"|          Electronic product shipping cost: {electronicShippingCost}");
+
+        UiSkelton.Indent1();
+        Console.WriteLine($"Electronic product shipping cost: {electronicShippingCost}");
 
         // Set the shipping strategy for books
         shippingCalculator.SetShippingStrategy(new BookShippingConcreteStrategy());
         double bookShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
-        Console.WriteLine($"|          Book shipping cost: {bookShippingCost}");
+
+        UiSkelton.Indent1();
+        Console.WriteLine($"Book shipping cost: {bookShippingCost}");
 
         // Set the shipping strategy for clothing
         shippingCalculator.SetShippingStrategy(new ClothingShippingConcreteStrategy());
         double clothingShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
-        Console.WriteLine($"|          Clothing shipping cost: {clothingShippingCost}");
 
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+        UiSkelton.Indent1();
+        Console.WriteLine($"Clothing shipping cost: {clothingShippingCost}");
+
+        UiSkelton.DrawFooter();
 
     }
     private static void RunImageStorageExample()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use StrategyPattern to test the ImageStorage example                         |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawHeader("Use StrategyPattern to test the ImageStorage example");
+
+
+
         var imageData = File.ReadAllBytes(@"D:\Amr_Amin.JPG");
 
         var jpegCompressor = new JpegCompressor();
@@ -60,7 +59,7 @@ public static class StrategyExamples
         var imageStorage = new ImageStorage(jpegCompressor, blackAndWhiteFilter);
         imageStorage.Store(imageData);
 
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawLineSeparator();
 
         var imageData2 = File.ReadAllBytes(@"D:\Amr_Amin.JPG");
         var pngCompressor = new JpegCompressor();
@@ -68,9 +67,7 @@ public static class StrategyExamples
         var imageStorage2 = new ImageStorage(pngCompressor, highContrastFilter);
         imageStorage2.Store(imageData2);
 
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+        UiSkelton.DrawFooter();
 
     }
 }

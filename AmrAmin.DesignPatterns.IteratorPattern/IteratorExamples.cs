@@ -2,17 +2,15 @@
 using System;
 
 using AmrAmin.DesignPatterns.IteratorPattern.BrowserExample;
+using AmrAmin.DesignPatterns.SharedKernel;
 
 public static class IteratorExamples
 {
     public static void RunExamples()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use IteratorPattern to test the BROWSER example                              |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
+        UiSkelton.DrawHeader("Use IteratorPattern to test the BROWSER example");
+
+
 
         var history = new BrowseHistory<string>();
         history.Push("https://www.example.com");
@@ -22,18 +20,12 @@ public static class IteratorExamples
         var iterator = history.CreateIterator();
         while (iterator.HasNext())
         {
-            Console.WriteLine("|      " + iterator.Current());
+            UiSkelton.Indent1();
+            Console.WriteLine(iterator.Current());
             iterator.Next();
         }
 
-
-
-
-
-
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+        UiSkelton.DrawFooter();
 
 
     }

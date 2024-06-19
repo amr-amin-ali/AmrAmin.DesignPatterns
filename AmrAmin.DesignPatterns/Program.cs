@@ -3,6 +3,7 @@
 using AmrAmin.DesignPatterns.CommandPattern;
 using AmrAmin.DesignPatterns.IteratorPattern;
 using AmrAmin.DesignPatterns.MementoPattern;
+using AmrAmin.DesignPatterns.ObserverPattern;
 using AmrAmin.DesignPatterns.StatePattern;
 using AmrAmin.DesignPatterns.Strategy_Pattern;
 using AmrAmin.DesignPatterns.TemplateMethodPattern;
@@ -17,5 +18,6 @@ public class Program
         MementoExamples.RunExamples();
         StateExamples.RunExamples();
         CommandPatternExamples.RunExamples();
+        ObservableExamples.RunExamples();
     }
 }

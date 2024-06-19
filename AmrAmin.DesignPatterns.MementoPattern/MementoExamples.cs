@@ -3,6 +3,7 @@ using System;
 
 using AmrAmin.DesignPatterns.MementoPattern.EditorExample;
 using AmrAmin.DesignPatterns.MementoPattern.GangOfFourExample;
+using AmrAmin.DesignPatterns.SharedKernel;
 
 public static class MementoExamples
 {
@@ -14,14 +15,7 @@ public static class MementoExamples
 
     private static void RunGangOfFourExample()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|  Use MementoPattern to test the 'undo' functionality in the GangOfFour example:   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
-
+        UiSkelton.DrawHeader("Use MementoPattern to test the 'undo' functionality in the GangOfFour example");
         // Example usage
         var originator = new Originator("Initial State");
         var caretaker = new Caretaker();
@@ -34,9 +28,8 @@ public static class MementoExamples
         caretaker.Undo(originator);
         caretaker.Undo(originator);
         caretaker.Redo(originator);
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+
+        UiSkelton.DrawFooter();
 
     }
     private static void RunEditorExample()

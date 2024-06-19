@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AmrAmin.DesignPatterns.SharedKernel\AmrAmin.DesignPatterns.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>

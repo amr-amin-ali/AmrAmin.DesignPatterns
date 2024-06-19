@@ -1,4 +1,6 @@
 ﻿namespace AmrAmin.DesignPatterns.StatePattern;
+
+using AmrAmin.DesignPatterns.SharedKernel;
 using AmrAmin.DesignPatterns.StatePattern.PhotoshopExample;
 
 public static class StateExamples
@@ -10,27 +12,27 @@ public static class StateExamples
 
     private static void RunPhotoshopExample()
     {
-        Console.WriteLine(" __________________________________________________________________________________");
-        Console.WriteLine("/                                                                                  \\");
-        Console.WriteLine("|      Use StatePattern to test the photoshop example                               |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [START]                                        |");
-        Console.WriteLine("|                                                                                   |");
+        UiSkelton.DrawHeader("Use StatePattern to test the photoshop example");
+
+
         var canvas = new Canvas();
         canvas.SetTool(new SelectionTool());
-        Console.Write("|           ");
+
+        UiSkelton.Indent1();
         canvas.MouseDown();
-        Console.Write("|           ");
+
+        UiSkelton.Indent1();
         canvas.MouseUp();
         canvas.SetTool(new BrushTool());
-        Console.Write("|           ");
+
+        UiSkelton.Indent1();
         canvas.MouseDown();
-        Console.Write("|           ");
+
+        UiSkelton.Indent1();
         canvas.MouseUp();
-        Console.WriteLine("|                                                                                   |");
-        Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+
+
+        UiSkelton.DrawFooter();
 
     }
 }
