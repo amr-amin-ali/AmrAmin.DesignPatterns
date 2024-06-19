@@ -19,7 +19,7 @@ public static class UiSkelton
     {
         Console.WriteLine("|                                                                                   |");
         Console.WriteLine("|                                    [END]                                          |");
-        Console.WriteLine("\\===================================================================================/");
+        Console.WriteLine("\\===================================================================================/\n\n\n");
     }
 
     public static void DrawLineSeparator()

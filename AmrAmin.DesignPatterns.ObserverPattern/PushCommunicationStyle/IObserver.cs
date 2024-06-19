@@ -1,8 +1,8 @@
 ﻿namespace AmrAmin.DesignPatterns.ObserverPattern.PushCommunicationStyle;
 
 /// <summary> Observer </summary>
-public interface IObserver
+public interface IObserver<T>
 {
-    void Update(int state);
+    void Update(T state);
 }
 

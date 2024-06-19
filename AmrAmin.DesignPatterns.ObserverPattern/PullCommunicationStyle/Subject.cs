@@ -1,34 +1,40 @@
 ﻿namespace AmrAmin.DesignPatterns.ObserverPattern.PullCommunicationStyle;
 
 /// <summary> Subject </summary>
-public class Subject
-{
-    private readonly List<IObserver> _observers = new List<IObserver>();
-    private int _state;
+using System;
+using System.Collections.Generic;
 
-    public void Attach(IObserver observer)
+public class Subject<T>
+{
+    private T _state;
+    private readonly List<IObserver<T>> _observers = new List<IObserver<T>>();
+
+    public void Attach(IObserver<T> observer)
     {
         _observers.Add(observer);
     }
 
-    public void Detach(IObserver observer)
+    public void Detach(IObserver<T> observer)
     {
         _observers.Remove(observer);
     }
 
-    public void NotifyObservers()
+    public void SetState(T newState)
     {
-        // No state update is pushed to the observers
+        _state = newState;
+        Notify();
     }
 
-    public int GetState()
+    public T GetState()
     {
         return _state;
     }
 
-    public void SetState(int state)
+    private void Notify()
     {
-        _state = state;
-        NotifyObservers();
+        foreach (var observer in _observers)
+        {
+            observer.Update();
+        }
     }
 }

@@ -1,12 +1,24 @@
 ﻿namespace AmrAmin.DesignPatterns.ObserverPattern.PullCommunicationStyle;
 
+using AmrAmin.DesignPatterns.SharedKernel;
+
 /// <summary> Concrete Observer </summary>
-public class ConcreteObserver : IObserver
+public class ConcreteObserver<T> : IObserver<T>
 {
-    public void Update(Subject subject)
+    private readonly string _name;
+    private readonly Subject<T> _subject;
+
+    public ConcreteObserver(string name, Subject<T> subject)
     {
-        // Observer pulls the updated state from the subject
-        int state = subject.GetState();
-        // Do something with the updated state
+        _name = name;
+        _subject = subject;
+    }
+
+    public void Update()
+    {
+        T state = _subject.GetState();
+        UiSkelton.Indent1();
+        Console.WriteLine($"{_name} received update: {state}");
+        UiSkelton.DrawLineSeparator();
     }
 }

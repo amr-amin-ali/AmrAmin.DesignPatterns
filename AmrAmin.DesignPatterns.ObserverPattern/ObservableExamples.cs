@@ -1,6 +1,11 @@
 ﻿namespace AmrAmin.DesignPatterns.ObserverPattern;
 
+using AmrAmin.DesignPatterns.ObserverPattern.ObservableCommunicationStyle;
+using AmrAmin.DesignPatterns.ObserverPattern.ObserverStockExample;
 using AmrAmin.DesignPatterns.SharedKernel;
+
+using PullStyle = AmrAmin.DesignPatterns.ObserverPattern.PullCommunicationStyle;
+using PushStyle = AmrAmin.DesignPatterns.ObserverPattern.PushCommunicationStyle;
 
 public static class ObservableExamples
 {
@@ -12,21 +17,95 @@ public static class ObservableExamples
 
         RunObservableCommunicationStyleExample();
 
+        RunObserverStockMarketExample();
+
     }
 
+    private static void RunObserverStockMarketExample()
+    {
+        UiSkelton.DrawHeader("Use ObservablePattern to run the Observer STOCK MARKET example");
+        var stockMarket = new StockMarket();
+
+        var investor1 = new IndividualInvestor("Amr Amin");
+        var investor2 = new InstitutionalInvestor("Amin Ali");
+        UiSkelton.Indent1();
+        Console.WriteLine("Amr Amin is subscribing to the stock market subject.");
+        UiSkelton.DrawLineSeparator();
+        stockMarket.AttachInvestor(investor1);
+
+        UiSkelton.Indent1();
+        Console.WriteLine("Amin Ali is subscribing to the stock market subject.");
+        UiSkelton.DrawLineSeparator();
+        stockMarket.AttachInvestor(investor2);
+
+        UiSkelton.Indent1();
+        Console.WriteLine("Add \"AAPL\" to stock with price: 120.50");
+        UiSkelton.DrawLineSeparator();
+        stockMarket.AddStock("AAPL", 120.50);
+
+        UiSkelton.Indent1();
+        Console.WriteLine("Add \"MSFT\" to stock with price: 250.00");
+        UiSkelton.DrawLineSeparator();
+        stockMarket.AddStock("MSFT", 250.00);
+
+        UiSkelton.Indent1();
+        Console.WriteLine("Remove \"AAPL\" from stock");
+        UiSkelton.DrawLineSeparator();
+        stockMarket.RemoveStock("AAPL");
+
+        UiSkelton.DrawFooter();
+    }
     private static void RunPullCommunicationStyleExample()
     {
-        UiSkelton.DrawHeader("Use ObservablePattern to run the PullCommunicationStyle example");
+        UiSkelton.DrawHeader("Use ObservablePattern to run the Pull Communication Style example");
+        // Create a Subject and some Observers
+        var subject = new PullStyle.Subject<int>();
+        var observer1 = new PullStyle.ConcreteObserver<int>("Observer 1", subject);
+        var observer2 = new PullStyle.ConcreteObserver<int>("Observer 2", subject);
+
+        // Attach the observers to the subject
+        subject.Attach(observer1);
+        subject.Attach(observer2);
+
+        // Change the state of the subject and notify the observers
+        subject.SetState(42);
+        subject.SetState(24);
+
         UiSkelton.DrawFooter();
     }
     private static void RunPushCommunicationStyleExample()
     {
-        UiSkelton.DrawHeader("Use ObservablePattern to run the PushCommunicationStyle example");
+        UiSkelton.DrawHeader("Use ObservablePattern to run the Push Communication Style example");
+        // Create a Subject and some Observers
+        var subject = new PushStyle.Subject<int>();
+        var observer1 = new PushStyle.ConcreteObserver<int>();
+        var observer2 = new PushStyle.ConcreteObserver<int>();
+
+        // Attach the observers to the subject
+        subject.Attach(observer1);
+        subject.Attach(observer2);
+
+        // Change the state of the subject and notify the observers
+        subject.SetState(42);
+        subject.SetState(24);
+
         UiSkelton.DrawFooter();
     }
     private static void RunObservableCommunicationStyleExample()
     {
-        UiSkelton.DrawHeader("Use ObservablePattern to run the ObservableCommunicationStyle example");
+        UiSkelton.DrawHeader("Use ObservablePattern to run the Observable Communication Style example");
+        // Create a Subject and some Observers
+        var subject = new Subject<int>();
+        var observer1 = new ConcreteObserver<int>("Observer 1");
+        var observer2 = new ConcreteObserver<int>("Observer 2");
+
+        // Attach the observers to the subject
+        subject.Attach(observer1);
+        subject.Attach(observer2);
+
+        // Change the state of the subject and notify the observers
+        subject.SetState(42);
+        subject.SetState(24);
         UiSkelton.DrawFooter();
     }
 }

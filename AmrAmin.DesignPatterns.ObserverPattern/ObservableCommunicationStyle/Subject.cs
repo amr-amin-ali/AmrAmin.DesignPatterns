@@ -1,59 +1,33 @@
 ﻿namespace AmrAmin.DesignPatterns.ObserverPattern.ObservableCommunicationStyle;
-// Subject
-using System;
-//using System.Collections.Generic;
-
-public class Subject
+using System.Collections.Generic;
+/// <summary> Subject </summary>
+public class Subject<T>
 {
-    private readonly List<IObserver<int>> _observers;
-    private int _state;
+    private T _state;
+    private readonly List<IObserver<T>> _observers = new List<IObserver<T>>();
 
-    public Subject()
-    {
-        _observers = new List<IObserver<int>>();
-    }
-
-    public void Subscribe(IObserver<int> observer)
+    public void Attach(IObserver<T> observer)
     {
         _observers.Add(observer);
     }
 
-    public void Unsubscribe(IObserver<int> observer)
+    public void Detach(IObserver<T> observer)
     {
         _observers.Remove(observer);
     }
 
-    public void SetState(int state)
+    public void SetState(T newState)
     {
-        _state = state;
-        NotifyObservers();
+        _state = newState;
+        Notify();
     }
 
-    private void NotifyObservers()
+    private void Notify()
     {
         foreach (var observer in _observers)
         {
-            observer.OnNext(_state);
+            observer.Update(_state);
         }
     }
 }
 
-// Observer
-public class ConcreteObserver : IObserver<int>
-{
-    public void OnNext(int value)
-    {
-        // Observer receives the updated state from the observable
-        // Do something with the updated state
-    }
-
-    public void OnError(Exception error)
-    {
-        // Handle errors
-    }
-
-    public void OnCompleted()
-    {
-        // Handle completion
-    }
-}

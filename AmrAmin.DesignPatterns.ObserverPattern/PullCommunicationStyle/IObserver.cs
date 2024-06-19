@@ -2,7 +2,7 @@
 
 
 /// <summary> Observer </summary>
-public interface IObserver
+public interface IObserver<T>
 {
-    void Update(Subject subject);
+    void Update();
 }
