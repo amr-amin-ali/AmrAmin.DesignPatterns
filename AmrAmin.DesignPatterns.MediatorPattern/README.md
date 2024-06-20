@@ -45,12 +45,16 @@ public class UIMediator : IMediator
     {
         if (sender == _textBox && action == "TextChanged")
         {
+            UiSkelton.WriteIndentedText2("TextBox notification was fired.");
+
             _button.Enable();
             _listBox.FilterItems(_textBox.Text);
             _navbar.UpdateTitle(_textBox.Text);
         }
         else if (sender == _button && action == "Clicked")
         {
+            UiSkelton.WriteIndentedText2("Button notification was fired.");
+
             _textBox.Clear();
             _listBox.ClearSelection();
             _navbar.ResetTitle();
@@ -58,10 +62,98 @@ public class UIMediator : IMediator
     }
 }
 
-// Concrete Components
+
+public class Button
+{
+    private readonly IMediator _mediator;
+    private bool _isEnabled;
+
+    public Button(IMediator mediator)
+    {
+        _mediator = mediator;
+        _isEnabled = false;
+    }
+
+    public void Enable()
+    {
+        _isEnabled = true;
+        UiSkelton.WriteIndentedText2("Button is enabled.");
+    }
+
+    public void Disable()
+    {
+        _isEnabled = false;
+        UiSkelton.WriteIndentedText2("Button is disabled.");
+
+    }
+
+    public void Click()
+    {
+        if (_isEnabled)
+        {
+            _mediator.Notify(this, "Clicked");
+        }
+    }
+}
+
+public class ListBox
+{
+    private readonly IMediator _mediator;
+    private readonly List<string> _items;
+
+    public ListBox(IMediator mediator)
+    {
+        _mediator = mediator;
+        _items = new List<string>();
+    }
+
+    public void AddItem(string item)
+    {
+        _items.Add(item);
+        UiSkelton.WriteIndentedText2(item + "was added to the list.");
+
+    }
+
+    public void FilterItems(string filter)
+    {
+        UiSkelton.WriteIndentedText2("Items filtered..");
+    }
+
+    public void ClearSelection()
+    {
+        UiSkelton.WriteIndentedText2("Selection cleared.");
+
+    }
+}
+
+public class Navbar
+{
+    private readonly IMediator _mediator;
+    private string _title;
+
+    public Navbar(IMediator mediator)
+    {
+        _mediator = mediator;
+        _title = "Default Title";
+    }
+
+    public void UpdateTitle(string newTitle)
+    {
+        _title = newTitle;
+        UiSkelton.WriteIndentedText2("Navbar title was updated.");
+
+    }
+
+    public void ResetTitle()
+    {
+        _title = "Default Title";
+        UiSkelton.WriteIndentedText2("Navbar title was resetted.");
+    }
+}
+
 public class TextBox
 {
-    private IMediator _mediator;
+    private readonly IMediator _mediator;
     public string Text { get; set; }
 
     public TextBox(IMediator mediator)
@@ -73,17 +165,249 @@ public class TextBox
     {
         _mediator.Notify(this, "TextChanged");
     }
+    public void Clear()
+    {
+        Text = string.Empty;
+        _mediator.Notify(this, "Text Cleared");
+    }
 }
 
-public class Button
-{
-    private IMediator _mediator;
-    private bool _isEnabled;
 
-    public Button(IMediator mediator)
+
+// Usage example
+// Usage example
+var mediator = new UIMediator();
+var textBox = new TextBox(mediator);
+var button = new Button(mediator);
+var listBox = new ListBox(mediator);
+var navbar = new Navbar(mediator);
+
+UiSkelton.WriteIndentedText1("Register textBox to mediator.");
+mediator.RegisterTextBox(textBox);
+UiSkelton.WriteIndentedText1("Register button to mediator.");
+mediator.RegisterButton(button);
+UiSkelton.WriteIndentedText1("Register listBox to mediator.");
+mediator.RegisterListBox(listBox);
+UiSkelton.WriteIndentedText1("Register navbar to mediator.");
+mediator.RegisterNavbar(navbar);
+
+UiSkelton.WriteIndentedText1("Write text to \"Search term\" in the textbox.");
+textBox.Text = "Search term";
+UiSkelton.WriteIndentedText1("Call \"textBox.TextChanged();\"");
+textBox.TextChanged(); // This will enable the button, filter the listbox, and update the navbar title
+UiSkelton.WriteIndentedText1("Click the button");
+button.Click(); // This will clear the textbox, clear the listbox selection, and reset the navbar title
+
+```
+
+In this example, the `UIMediator` class is the concrete mediator that coordinates the interactions between the different UI components (`TextBox`, `Button`, `ListBox`, and `Navbar`). Each component registers itself with the mediator, and when an event occurs in one component, the mediator is responsible for notifying the other components and coordinating their actions.
+
+## Implementing the Mediator Pattern with the Observer Pattern
+
+The Mediator Pattern can also be implemented using the Observer Pattern. In this approach, the mediator acts as the subject, and the components act as the observers.
+
+```csharp
+// Subject interface
+public interface ISubject
+{
+    void Attach(IObserver observer);
+    void Detach(IObserver observer);
+    void Notify(string action, string data);
+}
+
+// Concrete Subject
+public class UIMediator : ISubject
+{
+    private List<IObserver> _observers = new List<IObserver>();
+
+    public void Attach(IObserver observer)
+    {
+        _observers.Add(observer);
+    }
+    
+public class UIMediator : ISubject
+{
+    private readonly List<IObserver> _observers = new List<IObserver>();
+
+    public void Attach(IObserver observer)
+    {
+        _observers.Add(observer);
+    }
+
+    public void Detach(IObserver observer)
+    {
+        _observers.Remove(observer);
+    }
+
+    public void Notify(string action, string? data)
+    {
+        foreach (var observer in _observers)
+        {
+            observer.Update(action, data);
+        }
+    }
+
+    public void TextBoxTextChanged(string newText)
+    {
+        Notify("TextChanged", newText);
+    }
+
+    public void ButtonClicked()
+    {
+        Notify("Clicked", null);
+    }
+}
+
+// Observer interface
+public interface IObserver
+{
+    void Update(string action, string data);
+}
+
+// Concrete Observers
+// Concrete Observers
+public class TextBox : IObserver
+{
+    private readonly UIMediator _mediator;
+    public string Text { get; set; }
+
+    public TextBox(UIMediator mediator)
+    {
+        UiSkelton.WriteIndentedText1("Create TextBox UI component");
+        _mediator = mediator;
+        _mediator.Attach(this);
+    }
+
+    public void TextChanged()
+    {
+        _mediator.TextBoxTextChanged(Text);
+    }
+
+    public void Update(string action, string data)
+    {
+        if (action == "TextChanged")
+        {
+            // Enable button, filter listbox, update navbar title
+        }
+    }
+}
+
+public class Navbar : IObserver
+{
+    private readonly UIMediator _mediator;
+    private string _title;
+
+    public Navbar(UIMediator mediator)
+    {
+        UiSkelton.WriteIndentedText1("Create Navbar UI component");
+        _mediator = mediator;
+        _mediator.Attach(this);
+        _title = "Default Title";
+        UiSkelton.WriteIndentedText2("Navbar title: " + _title);
+    }
+
+    public void UpdateTitle(string newTitle)
+    {
+        _title = newTitle;
+        UiSkelton.WriteIndentedText3("Navbar title: " + newTitle);
+        // Update the title in the Navbar
+    }
+
+    public void ResetTitle()
+    {
+        _title = "Default Title";
+        UiSkelton.WriteIndentedText2("Navbar was resetted.");
+        UiSkelton.WriteIndentedText3("Navbar title: " + _title);
+        // Reset the title in the Navbar
+    }
+
+    public void Update(string action, string data)
+    {
+        if (action == "TextChanged")
+        {
+            // Update the navbar title
+            UiSkelton.WriteIndentedText2("\"TextChanged\" so navbar title updated.");
+            UpdateTitle(data);
+
+        }
+        else if (action == "Clicked")
+        {
+            // Reset the navbar title
+            UiSkelton.WriteIndentedText2("\"ButtonClicked\" so navbar title resetted.");
+            _title = "";
+
+        }
+    }
+}
+
+public class ListBox : IObserver
+{
+    private readonly UIMediator _mediator;
+    private List<string> _items;
+
+    public ListBox(UIMediator mediator)
     {
         _mediator = mediator;
+        _mediator.Attach(this);
+        _items = new List<string>();
+        UiSkelton.WriteIndentedText1("Create ListBox UI component");
+
+    }
+
+    public void AddItem(string item)
+    {
+        UiSkelton.WriteIndentedText2(item + " was added to ListBox.");
+        _items.Add(item);
+        UiSkelton.WriteIndentedText3("Items in list box:");
+        foreach (string i in _items)
+        {
+            UiSkelton.WriteIndentedText3(i);
+        }
+    }
+
+    public void FilterItems(string filter)
+    {
+        UiSkelton.WriteIndentedText2("ListBox items were filtered");
+        // Filter items based on the provided text
+        this._items = _items.Where(item => filter.Contains(item)).ToList();
+        UiSkelton.WriteIndentedText3("Items in the list box:");
+        foreach (string item in _items)
+        {
+            UiSkelton.WriteIndentedText3(item);
+        }
+    }
+
+    public void ClearSelection()
+    {
+        UiSkelton.WriteIndentedText2("ListBox items were cleared.");
+        _items.Clear();
+        // Clear the selection in the ListBox
+    }
+
+    public void Update(string action, string data)
+    {
+        if (action == "TextChanged")
+        {
+            UiSkelton.WriteIndentedText2("\"TextChanged\" so this ListBox will filter it's items.");
+            // Filter items in the listbox
+            FilterItems(data);
+            UiSkelton.WriteIndentedText2("ListBox items were filtered");
+        }
+    }
+}
+
+public class Button : IObserver
+{
+    private readonly UIMediator _mediator;
+    private bool _isEnabled;
+
+    public Button(UIMediator mediator)
+    {
+        _mediator = mediator;
+        _mediator.Attach(this);
         _isEnabled = false;
+        UiSkelton.WriteIndentedText1("Create Button UI component");
+
     }
 
     public void Enable()
@@ -100,161 +424,65 @@ public class Button
     {
         if (_isEnabled)
         {
-            _mediator.Notify(this, "Clicked");
+            _mediator.ButtonClicked();
         }
     }
-}
 
-public class ListBox
-{
-    private IMediator _mediator;
-    private List<string> _items;
-
-    public ListBox(IMediator mediator)
+    public void Update(string action, string data)
     {
-        _mediator = mediator;
-        _items = new List<string>();
-    }
-
-    public void AddItem(string item)
-    {
-        _items.Add(item);
-    }
-
-    public void FilterItems(string filter)
-    {
-        // Filter items based on the provided text
-    }
-
-    public void ClearSelection()
-    {
-        // Clear the selection in the ListBox
-    }
-}
-
-public class Navbar
-{
-    private IMediator _mediator;
-    private string _title;
-
-    public Navbar(IMediator mediator)
-    {
-        _mediator = mediator;
-        _title = "Default Title";
-    }
-
-    public void UpdateTitle(string newTitle)
-    {
-        _title = newTitle;
-        // Update the title in the Navbar
-    }
-
-    public void ResetTitle()
-    {
-        _title = "Default Title";
-        // Reset the title in the Navbar
-    }
-}
-
-// Usage example
-var mediator = new UIMediator();
-var textBox = new TextBox(mediator);
-var button = new Button(mediator);
-var listBox = new ListBox(mediator);
-var navbar = new Navbar(mediator);
-
-mediator.RegisterTextBox(textBox);
-mediator.RegisterButton(button);
-mediator.RegisterListBox(listBox);
-mediator.RegisterNavbar(navbar);
-
-textBox.Text = "Search term";
-textBox.TextChanged(); // This will enable the button, filter the listbox, and update the navbar title
-button.Click(); // This will clear the textbox, clear the listbox selection, and reset the navbar title
-```
-
-In this example, the `UIMediator` class is the concrete mediator that coordinates the interactions between the different UI components (`TextBox`, `Button`, `ListBox`, and `Navbar`). Each component registers itself with the mediator, and when an event occurs in one component, the mediator is responsible for notifying the other components and coordinating their actions.
-
-## Implementing the Mediator Pattern with the Observer Pattern
-
-The Mediator Pattern can also be implemented using the Observer Pattern. In this approach, the mediator acts as the subject, and the components act as the observers.
-
-```csharp
-// Subject interface
-public interface ISubject
-{
-    void Attach(IObserver observer);
-    void Detach(IObserver observer);
-    void Notify(string action);
-}
-
-// Concrete Subject
-public class UIMediator : ISubject
-{
-    private List<IObserver> _observers = new List<IObserver>();
-
-    public void Attach(IObserver observer)
-    {
-        _observers.Add(observer);
-    }
-
-    public void Detach(IObserver observer)
-    {
-        _observers.Remove(observer);
-    }
-
-    public void Notify(string action)
-    {
-        foreach (var observer in _observers)
+        if (action == "Clicked")
         {
-            observer.Update(action);
-        }
-    }
+            UiSkelton.WriteIndentedText2("Button was clicked.");
+            UiSkelton.WriteIndentedText3(" Clear textbox.");
+            UiSkelton.WriteIndentedText3(" Clear listbox selection.");
+            UiSkelton.WriteIndentedText3(" reset navbar title.");
 
-    public void TextBoxTextChanged()
-    {
-        Notify("TextChanged");
-    }
-
-    public void ButtonClicked()
-    {
-        Notify("Clicked");
-    }
-}
-
-// Observer interface
-public interface IObserver
-{
-    void Update(string action);
-}
-
-// Concrete Observers
-public class TextBox : IObserver
-{
-    private UIMediator _mediator;
-    public string Text { get; set; }
-
-    public TextBox(UIMediator mediator)
-    {
-        _mediator = mediator;
-        _mediator.Attach(this);
-    }
-
-    public void TextChanged()
-    {
-        _mediator.TextBoxTextChanged();
-    }
-
-    public void Update(string action)
-    {
-        if (action == "TextChanged")
-        {
-            // Enable button, filter listbox, update navbar title
+            // Clear textbox, clear listbox selection, reset navbar title
+            _mediator.ButtonClicked();
         }
     }
 }
 
-// Similar implementations for Button, ListBox, and Navbar
+// Create the mediator
+MWO.UIMediator mediator = new MWO.UIMediator();
+
+// Create the UI components
+MWO.TextBox textBox = new MWO.TextBox(mediator);
+MWO.Button button = new MWO.Button(mediator);
+MWO.ListBox listBox = new MWO.ListBox(mediator);
+MWO.Navbar navbar = new MWO.Navbar(mediator);
+
+// Add items to the ListBox
+UiSkelton.WriteIndentedText1("Add \"AAAAAAAAAAAAAAAAA\" to the ListBox");
+listBox.AddItem("AAAAAAAAAAAAAAAAA");
+UiSkelton.WriteIndentedText1("Add \"BBBBBBBBBBBBBBBBB\" to the ListBox");
+listBox.AddItem("BBBBBBBBBBBBBBBBB");
+UiSkelton.WriteIndentedText1("Add \"CCCCCCCCCCCCCCCCC\" to the ListBox");
+listBox.AddItem("CCCCCCCCCCCCCCCCC");
+
+// Interact with the UI components
+UiSkelton.WriteIndentedText1("Write \"AAAAAAAAAAAAAAAAA\" to the TextBox");
+textBox.Text = "AAAAAAAAAAAAAAAAA";
+UiSkelton.WriteIndentedText1("Call the \"textBox.TextChanged();\"");
+textBox.TextChanged();
+
+// The TextChanged event is raised, and the mediator notifies the observers
+// The TextBox, Button, ListBox, and Navbar components update their state accordingly
+// For example:
+// - The Button is enabled
+// - The ListBox items are filtered
+// - The Navbar title is updated
+
+// User clicks the Button
+UiSkelton.WriteIndentedText1("Click the button.");
+button.Click();
+
+// The Clicked event is raised, and the mediator notifies the observers
+// The TextBox, ListBox, and Navbar components update their state accordingly
+// For example:
+// - The TextBox is cleared
+// - The ListBox selection is cleared
+// - The Navbar title is reset
 ```
 
 In this version, the `UIMediator` class acts as the subject, and the UI components (`TextBox`, `Button`, `ListBox`, and `Navbar`) act as the observers. The mediator maintains a list of observers and notifies them when an event occurs. The observers then update their state accordingly.

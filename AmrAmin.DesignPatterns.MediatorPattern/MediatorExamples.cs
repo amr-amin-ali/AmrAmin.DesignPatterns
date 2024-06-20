@@ -14,9 +14,6 @@ public static class MediatorExamples
     public static void RunPureMediatorExample()
     {
         UiSkelton.DrawHeader("Use MediatorPattern to test the pure MEDIATOR example");
-
-
-
         // Usage example
         var mediator = new UIMediator();
         var textBox = new TextBox(mediator);
@@ -46,10 +43,6 @@ public static class MediatorExamples
 
         UiSkelton.DrawFooter();
     }
-
-
-
-
 
     public static void RunMediatorWithObserverExample()
     {
