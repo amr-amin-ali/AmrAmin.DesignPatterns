@@ -26,22 +26,19 @@ public static class StrategyExamples
         shippingCalculator.SetShippingStrategy(new ElectronicShippingConcreteStrategy());
         double electronicShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
 
-        UiSkelton.Indent1();
-        Console.WriteLine($"Electronic product shipping cost: {electronicShippingCost}");
+        UiSkelton.WriteIndentedText1($"Electronic product shipping cost: {electronicShippingCost}");
 
         // Set the shipping strategy for books
         shippingCalculator.SetShippingStrategy(new BookShippingConcreteStrategy());
         double bookShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
 
-        UiSkelton.Indent1();
-        Console.WriteLine($"Book shipping cost: {bookShippingCost}");
+        UiSkelton.WriteIndentedText1($"Book shipping cost: {bookShippingCost}");
 
         // Set the shipping strategy for clothing
         shippingCalculator.SetShippingStrategy(new ClothingShippingConcreteStrategy());
         double clothingShippingCost = shippingCalculator.CalculateShippingCost(new DeliveryAddress { /* address details */ });
 
-        UiSkelton.Indent1();
-        Console.WriteLine($"Clothing shipping cost: {clothingShippingCost}");
+        UiSkelton.WriteIndentedText1($"Clothing shipping cost: {clothingShippingCost}");
 
         UiSkelton.DrawFooter();
 

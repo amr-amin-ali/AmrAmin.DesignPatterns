@@ -2,6 +2,7 @@
 
 using AmrAmin.DesignPatterns.CommandPattern;
 using AmrAmin.DesignPatterns.IteratorPattern;
+using AmrAmin.DesignPatterns.MediatorPattern;
 using AmrAmin.DesignPatterns.MementoPattern;
 using AmrAmin.DesignPatterns.ObserverPattern;
 using AmrAmin.DesignPatterns.StatePattern;
@@ -19,5 +20,6 @@ public class Program
         StateExamples.RunExamples();
         CommandPatternExamples.RunExamples();
         ObservableExamples.RunExamples();
+        MediatorExamples.RunExamples();
     }
 }

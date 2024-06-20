@@ -17,8 +17,7 @@ public class ConcreteObserver<T> : IObserver<T>
     public void Update()
     {
         T state = _subject.GetState();
-        UiSkelton.Indent1();
-        Console.WriteLine($"{_name} received update: {state}");
+        UiSkelton.WriteIndentedText1($"{_name} received update: {state}");
         UiSkelton.DrawLineSeparator();
     }
 }

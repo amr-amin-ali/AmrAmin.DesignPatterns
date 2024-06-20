@@ -26,12 +26,17 @@ public static class UiSkelton
     {
         Console.WriteLine("|                                                                                   |");
     }
-    public static void Indent1()
+    public static void WriteIndentedText1
+        (string text)
     {
-        Console.Write("|        ");
+        Console.WriteLine($"|        {text}");
     }
-    public static void Indent2()
+    public static void WriteIndentedText2(string text)
     {
-        Console.Write("|                ");
+        Console.WriteLine($"|                {text}");
+    }
+    public static void WriteIndentedText3(string text)
+    {
+        Console.WriteLine($"|                        {text}");
     }
 }

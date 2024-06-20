@@ -20,7 +20,7 @@ public static class IteratorExamples
         var iterator = history.CreateIterator();
         while (iterator.HasNext())
         {
-            UiSkelton.Indent1();
+            UiSkelton.WriteIndentedText1(string.Empty);
             Console.WriteLine(iterator.Current());
             iterator.Next();
         }

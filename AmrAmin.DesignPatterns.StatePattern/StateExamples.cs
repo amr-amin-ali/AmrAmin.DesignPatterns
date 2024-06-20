@@ -18,17 +18,17 @@ public static class StateExamples
         var canvas = new Canvas();
         canvas.SetTool(new SelectionTool());
 
-        UiSkelton.Indent1();
+        UiSkelton.WriteIndentedText1(string.Empty);
         canvas.MouseDown();
 
-        UiSkelton.Indent1();
+        UiSkelton.WriteIndentedText1(string.Empty);
         canvas.MouseUp();
         canvas.SetTool(new BrushTool());
 
-        UiSkelton.Indent1();
+        UiSkelton.WriteIndentedText1(string.Empty);
         canvas.MouseDown();
 
-        UiSkelton.Indent1();
+        UiSkelton.WriteIndentedText1(string.Empty);
         canvas.MouseUp();
 
 

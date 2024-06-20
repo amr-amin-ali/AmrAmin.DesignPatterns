@@ -28,28 +28,23 @@ public static class ObservableExamples
 
         var investor1 = new IndividualInvestor("Amr Amin");
         var investor2 = new InstitutionalInvestor("Amin Ali");
-        UiSkelton.Indent1();
-        Console.WriteLine("Amr Amin is subscribing to the stock market subject.");
+        UiSkelton.WriteIndentedText1("Amr Amin is subscribing to the stock market subject.");
         UiSkelton.DrawLineSeparator();
         stockMarket.AttachInvestor(investor1);
 
-        UiSkelton.Indent1();
-        Console.WriteLine("Amin Ali is subscribing to the stock market subject.");
+        UiSkelton.WriteIndentedText1("Amin Ali is subscribing to the stock market subject.");
         UiSkelton.DrawLineSeparator();
         stockMarket.AttachInvestor(investor2);
 
-        UiSkelton.Indent1();
-        Console.WriteLine("Add \"AAPL\" to stock with price: 120.50");
+        UiSkelton.WriteIndentedText1("Add \"AAPL\" to stock with price: 120.50");
         UiSkelton.DrawLineSeparator();
         stockMarket.AddStock("AAPL", 120.50);
 
-        UiSkelton.Indent1();
-        Console.WriteLine("Add \"MSFT\" to stock with price: 250.00");
+        UiSkelton.WriteIndentedText1("Add \"MSFT\" to stock with price: 250.00");
         UiSkelton.DrawLineSeparator();
         stockMarket.AddStock("MSFT", 250.00);
 
-        UiSkelton.Indent1();
-        Console.WriteLine("Remove \"AAPL\" from stock");
+        UiSkelton.WriteIndentedText1("Remove \"AAPL\" from stock");
         UiSkelton.DrawLineSeparator();
         stockMarket.RemoveStock("AAPL");
 
