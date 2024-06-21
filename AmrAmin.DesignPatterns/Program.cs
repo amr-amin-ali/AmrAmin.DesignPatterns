@@ -1,5 +1,6 @@
 ﻿namespace AmrAmin.DesignPatterns;
 
+using AmrAmin.DesignPatterns.ChainOfResponsibility;
 using AmrAmin.DesignPatterns.CommandPattern;
 using AmrAmin.DesignPatterns.IteratorPattern;
 using AmrAmin.DesignPatterns.MediatorPattern;
@@ -21,5 +22,6 @@ public class Program
         CommandPatternExamples.RunExamples();
         ObservableExamples.RunExamples();
         MediatorExamples.RunExamples();
+        ChainOfResponsibilityExamples.RunExamples();
     }
 }
