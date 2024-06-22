@@ -9,6 +9,7 @@ using AmrAmin.DesignPatterns.ObserverPattern;
 using AmrAmin.DesignPatterns.StatePattern;
 using AmrAmin.DesignPatterns.Strategy_Pattern;
 using AmrAmin.DesignPatterns.TemplateMethodPattern;
+using AmrAmin.DesignPatterns.VisitorPattern;
 
 public class Program
 {
@@ -23,5 +24,6 @@ public class Program
         ObservableExamples.RunExamples();
         MediatorExamples.RunExamples();
         ChainOfResponsibilityExamples.RunExamples();
+        VisitorExamples.RunExamples();
     }
 }
