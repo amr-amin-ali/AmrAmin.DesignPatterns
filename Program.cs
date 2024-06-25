@@ -10,11 +10,17 @@ using AmrAmin.DesignPatterns.Behavioral.StatePattern;
 using AmrAmin.DesignPatterns.Behavioral.StrategyPattern;
 using AmrAmin.DesignPatterns.Behavioral.TemplateMethodPattern;
 using AmrAmin.DesignPatterns.Behavioral.VisitorPattern;
+using AmrAmin.DesignPatterns.Structural.CompositePattern;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+        /************************************************************\
+        |                                                            |
+        |      Behavioral design patterns examples                   |
+        |                                                            |
+        \************************************************************/
         IteratorExamples.RunExamples();
         MementoExamples.RunExamples();
         StateExamples.RunExamples();
@@ -25,5 +31,11 @@ public class Program
         ChainOfResponsibilityExamples.RunExamples();
         TemplateMethodExamples.RunExamples();
         StrategyExamples.RunExamples();
+        /************************************************************\
+        |                                                            |
+        |      Structural design patterns examples                   |
+        |                                                            |
+        \************************************************************/
+        CompositeExamples.RunExamples();
     }
 }
