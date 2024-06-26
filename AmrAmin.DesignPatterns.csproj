@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Creational\" />
-    <Folder Include="Structural\FacadePattern\" />
     <Folder Include="Structural\FlyweightPattern\" />
     <Folder Include="Structural\ProxyPattern\" />
     <Folder Include="Structural\BridgePattern\" />
