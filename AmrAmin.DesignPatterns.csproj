@@ -14,7 +14,6 @@
     <Folder Include="Structural\FlyweightPattern\" />
     <Folder Include="Structural\ProxyPattern\" />
     <Folder Include="Structural\BridgePattern\" />
-    <Folder Include="Structural\AdapterPattern\" />
   </ItemGroup>
 
 </Project>
