@@ -12,6 +12,7 @@ using AmrAmin.DesignPatterns.Behavioral.TemplateMethodPattern;
 using AmrAmin.DesignPatterns.Behavioral.VisitorPattern;
 using AmrAmin.DesignPatterns.Structural.AdapterPattern;
 using AmrAmin.DesignPatterns.Structural.CompositePattern;
+using AmrAmin.DesignPatterns.Structural.DecoratorPattern;
 
 public class Program
 {
@@ -39,5 +40,6 @@ public class Program
         \************************************************************/
         CompositeExamples.RunExamples();
         AdapterExamples.RunExamples();
+        DecoratorExamples.RunExamples();
     }
 }
