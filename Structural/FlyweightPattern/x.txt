@@ -1,0 +1,62 @@
+﻿//namespace AmrAmin.DesignPatterns.Structural.FlyweightPattern;
+//public class Point
+//{
+//    private readonly int _x;
+//    private readonly int _y;
+//    private readonly PointIcon _icon;
+
+//    public Point(int x, int y, PointIcon icon)
+//    {
+//        _x = x;
+//        _y = y;
+//        _icon = icon;
+//    }
+//    public void Draw()
+//    {
+//        UiSkelton.WriteIndentedText3($"Drawing X:{_x} Y:{_y} Type:{_icon.GetType()}");
+//    }
+//}
+//public class PointIcon
+//{
+//    private readonly PointType _type;
+
+//    private readonly byte[] _icon;
+
+//    public PointIcon(PointType type, byte[] icon)
+//    {
+//        _icon = icon;
+//        _type = type;
+//    }
+//}
+//public enum PointType
+//{
+//    CAFE = 1,
+//    RESTAURANT = 2,
+//    HOSPITAL = 3
+//}
+//public class PointIconFactory
+//{
+//    private readonly Dictionary<PointType, PointIcon> _icons = new Dictionary<PointType, PointIcon>();
+//    public PointIcon GetPointIcon(PointType type)
+//    {
+//        if (!_icons.ContainsKey(type))
+//        {
+//            var icon = new PointIcon(type, null);
+//            _icons.Add(type, icon);
+//        }
+//        return _icons[type];
+//    }
+//}
+//public class PointService
+//{
+//    private PointIconFactory IconFactory { get; set; }
+
+//    public PointService(PointIconFactory iconFactory)
+//    {
+//        IconFactory = iconFactory;
+//    }
+//    public List<Point> GetPoints()
+//    {
+//        return [new Point(x: 1, y: 2, icon: IconFactory.GetPointIcon(PointType.CAFE))];
+//    }
+//}

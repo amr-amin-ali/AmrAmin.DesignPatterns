@@ -8,8 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Structural\FlyweightPattern\x.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Structural\FlyweightPattern\x.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Creational\" />
-    <Folder Include="Structural\FlyweightPattern\" />
     <Folder Include="Structural\ProxyPattern\" />
     <Folder Include="Structural\BridgePattern\" />
   </ItemGroup>
