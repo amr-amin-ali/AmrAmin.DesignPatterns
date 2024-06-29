@@ -16,6 +16,7 @@ using AmrAmin.DesignPatterns.Structural.CompositePattern;
 using AmrAmin.DesignPatterns.Structural.DecoratorPattern;
 using AmrAmin.DesignPatterns.Structural.FacadePattern;
 using AmrAmin.DesignPatterns.Structural.FlyweightPattern;
+using AmrAmin.DesignPatterns.Structural.ProxyPattern;
 
 public class Program
 {
@@ -47,5 +48,6 @@ public class Program
         FacadeExamples.RunExamples();
         FlyweightExamples.RunExamples();
         BridgeExamples.RunExamples();
+        ProxyExamples.RunExamples();
     }
 }
