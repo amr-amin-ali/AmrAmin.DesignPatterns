@@ -18,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Creational\" />
     <Folder Include="Structural\ProxyPattern\" />
-    <Folder Include="Structural\BridgePattern\" />
   </ItemGroup>
 
 </Project>

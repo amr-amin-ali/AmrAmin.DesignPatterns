@@ -11,6 +11,7 @@ using AmrAmin.DesignPatterns.Behavioral.StrategyPattern;
 using AmrAmin.DesignPatterns.Behavioral.TemplateMethodPattern;
 using AmrAmin.DesignPatterns.Behavioral.VisitorPattern;
 using AmrAmin.DesignPatterns.Structural.AdapterPattern;
+using AmrAmin.DesignPatterns.Structural.BridgePattern;
 using AmrAmin.DesignPatterns.Structural.CompositePattern;
 using AmrAmin.DesignPatterns.Structural.DecoratorPattern;
 using AmrAmin.DesignPatterns.Structural.FacadePattern;
@@ -45,5 +46,6 @@ public class Program
         DecoratorExamples.RunExamples();
         FacadeExamples.RunExamples();
         FlyweightExamples.RunExamples();
+        BridgeExamples.RunExamples();
     }
 }
