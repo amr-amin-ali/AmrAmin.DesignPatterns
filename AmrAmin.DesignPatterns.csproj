@@ -15,8 +15,4 @@
     <Compile Include="Structural\FlyweightPattern\x.txt" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Creational\" />
-  </ItemGroup>
-
 </Project>
