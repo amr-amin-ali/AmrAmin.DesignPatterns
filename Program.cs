@@ -66,9 +66,9 @@ public class Program
         \************************************************************/
         ");
         PrototypeExamples.RunExamples();
-        BuilderPatternExamples.RunExamples();
         SingletonExamples.RunExamples();
         FactoryMethodExamples.RunExamples();
         AbstractFactoryExamples.RunExamples();
+        BuilderPatternExamples.RunExamples();
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 public static class UiSkelton
 {
-    public delegate void Function();
+    private static readonly string _space = "   ";
 
     public static void DrawHeader(string message)
     {
@@ -29,14 +29,22 @@ public static class UiSkelton
     public static void WriteIndentedText1
         (string text)
     {
-        Console.WriteLine($"|        {text}");
+        Console.WriteLine($"|{_space}{text}");
     }
     public static void WriteIndentedText2(string text)
     {
-        Console.WriteLine($"|                {text}");
+        Console.WriteLine($"|{_space}{_space}{text}");
     }
     public static void WriteIndentedText3(string text)
     {
-        Console.WriteLine($"|                        {text}");
+        Console.WriteLine($"|{_space}{_space}{_space}{text}");
+    }
+    public static void WriteIndentedText4(string text)
+    {
+        Console.WriteLine($"|{_space}{_space}{_space}{_space}{text}");
+    }
+    public static void WriteIndentedText5(string text)
+    {
+        Console.WriteLine($"|{_space}{_space}{_space}{_space}{_space}{text}");
     }
 }
