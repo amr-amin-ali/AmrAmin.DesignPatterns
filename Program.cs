@@ -65,10 +65,10 @@ public class Program
         |                                                            |
         \************************************************************/
         ");
-        PrototypeExamples.RunExamples();
         SingletonExamples.RunExamples();
         FactoryMethodExamples.RunExamples();
         AbstractFactoryExamples.RunExamples();
         BuilderPatternExamples.RunExamples();
+        PrototypeExamples.RunExamples();
     }
 }
